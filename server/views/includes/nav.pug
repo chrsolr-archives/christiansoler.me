@@ -1,0 +1,31 @@
+nav.navbar.navbar-default.navbar-fixed-top
+    .container.animated.fadeIn
+        .navbar-header
+            button(type="button", class="navbar-toggle collapsed", data-toggle="collapse", data-target="#navbar-top", aria-expanded="false")
+                span.sr-only Toggle navigation
+                span.icon-bar
+                span.icon-bar
+                span.icon-bar
+            a.navbar-brand(href="/") #{brand_title}
+
+        .collapse.navbar-collapse(id="navbar-top")
+            ul.nav.navbar-nav.navbar-right
+                li
+                    a(href="/", data-toggle="collapse", data-target=".navbar-collapse.in") Home
+                li
+                    a(href="/blogs", data-toggle="collapse", data-target=".navbar-collapse.in") Blog
+                if user && user.isAnAdmin
+                    li.dropdown
+                        a(href="#", class="dropdown-toggle", data-toggle="dropdown", role="button", aria-haspopup="true", aria-expanded="false") Account 
+                            span.caret
+                        ul.dropdown-menu
+                            li
+                                a(href="/profile", data-toggle="collapse", data-target=".navbar-collapse.in") Profile
+                            li
+                                a(href="/logout", data-toggle="collapse", data-target=".navbar-collapse.in") Logout
+                if user && !user.isAnAdmin
+                    li
+                        a(href="/logout", data-toggle="collapse", data-target=".navbar-collapse.in") Logout
+                if !user
+                    li
+                        a(href="/login", data-toggle="collapse", data-target=".navbar-collapse.in") Login

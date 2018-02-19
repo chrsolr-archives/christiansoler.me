@@ -7,7 +7,7 @@ const config = (() => {
         brand_title: process.env.BRAND_TITLE || 'christiansoler.me-DEV',
         hostname: process.env.HOSTNAME || 'localhost',
         port: process.env.PORT || '3000',
-        db_url: process.env.DB_URL || 'mongodb://dummy:dummy@ds125578.mlab.com:25578/chrsolrdb-dev'
+        db_url: process.env.DB_URL || 'mongodb://dummy:dummy@ds161225.mlab.com:61225/kpdb-dev'
     };
 
     const paths = {

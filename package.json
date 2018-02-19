@@ -1,0 +1,24 @@
+{
+  "name": "christiansoler.me",
+  "version": "1.0.0",
+  "description": "Check out the development branch for the latest version.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "build": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iamrelos/christiansoler.me.git"
+  },
+  "author": "Christian Soler",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/iamrelos/christiansoler.me/issues"
+  },
+  "homepage": "https://github.com/iamrelos/christiansoler.me#readme",
+  "dependencies": {
+  },
+  "devDependencies": {
+  }
+}

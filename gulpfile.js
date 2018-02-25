@@ -76,4 +76,4 @@ gulp.task('ts-compile', ['tsconfig'], () => {
         .pipe(gulp.dest(`${config.paths.js}`));
 });
 
-gulp.task('default', ['minify-css', 'ts-compile', 'prismjs-js', 'copy-require-main-js']);
+gulp.task('default', ['minify-css', 'ts-compile']);

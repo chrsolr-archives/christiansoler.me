@@ -17,9 +17,5 @@
         "noEmitOnError": false,
         "noEmit": false
     },
-    "files": ["public/typescript/modules/bootstrapper.ts",
-        "public/typescript/scripts/blog-create.ts",
-        "public/typescript/scripts/blog-edit.ts",
-        "public/typescript/scripts/blog.ts"
-    ]
+    "files": ["public/typescript/core/application.ts"]
 }

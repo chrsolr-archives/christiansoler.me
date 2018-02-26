@@ -1,6 +1,5 @@
 {
     "compilerOptions": {
-        "module": "amd",
         "target": "es5",
         "allowJs": false,
         "removeComments": true,
@@ -11,7 +10,6 @@
         "suppressExcessPropertyErrors": true,
         "noFallthroughCasesInSwitch": true,
         "allowUnreachableCode": false,
-        "rootDir": "./public/typescript/",
         "declaration": true,
         "alwaysStrict": true,
         "noEmitOnError": false,

@@ -1,10 +1,10 @@
-((): void => {
+((app: any): void => {
 
-    angular.module('app').config(config);
+    app.config(config);
 
     config.$inject = ['$routeProvider', '$locationProvider'];
 
-    function config($routeProvider, $locationProvider) {
+    function config($routeProvider: ng.route.IRouteProvider, $locationProvider: ng.ILocationProvider) {
         $routeProvider.when('/', {
             templateUrl: '/views/home.html',
             caseInsensitiveMatch: true,
@@ -16,4 +16,4 @@
 
         $locationProvider.html5Mode(true);
     };
-})();
+})(app || angular);

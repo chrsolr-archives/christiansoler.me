@@ -1,4 +1,4 @@
-((): void => {
+const app = ((): void => {
     'use strict';
 
     const APP_NAME = 'app';

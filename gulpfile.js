@@ -22,9 +22,6 @@ gulp.task('minify-css', ['autoprefixer'], () => gulp.src(`${config.paths.css}sty
     .pipe(glp.rename('style.min.css'))
     .pipe(gulp.dest(config.paths.css)));
 
-gulp.task('copy-require-main-js', () => gulp.src(`${config.paths.typescript}config/main.js`)
-    .pipe(gulp.dest(config.paths.js)));
-
 gulp.task('prismjs-js', ['prismjs-css'], () => {
     const languages = [
         './node_modules/prismjs/prism.js',
@@ -61,7 +58,7 @@ gulp.task('prismjs-css', () => {
 gulp.task('tsconfig', () => {
     var tsConfig = glp.tsconfig(config.gulp.typescript);
 
-    return gulp.src([config.paths.typescript + "**/*.ts"])
+    return gulp.src(config.gulp.typescript.order)
         .pipe(tsConfig())
         .pipe(gulp.dest('./'));
 });
@@ -70,9 +67,12 @@ gulp.task('ts-compile', ['tsconfig'], () => {
     var ts = glp.typescript;
     var tsProject = ts.createProject('./tsconfig.json');
 
-    return tsProject.src()
+    return gulp.src(config.gulp.typescript.order)
         .pipe(tsProject(ts.reporter.nullReporter())).js
+        .pipe(glp.sourcemaps.init())
+        .pipe(glp.concat('application.js'))
         .pipe(glp.minify(config.gulp.minify.js))
+        .pipe(glp.sourcemaps.write(`./`))
         .pipe(gulp.dest(`${config.paths.js}`));
 });
 

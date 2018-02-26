@@ -22,11 +22,13 @@ const config = (() => {
     const gulp = {
         typescript: {
             order: [
-                `**/typescript/**/*.ts`
+                `${CLIENT}typescript/core/application.ts`,
+                `${CLIENT}typescript/core/application-*.ts`,
             ],
             tsConfig: {
                 compilerOptions: {
-                    module: 'amd',
+                    //module: 'umd',
+                    //moduleResolution: ''
                     target: 'es5',
                     allowJs: false,
                     removeComments: true,
@@ -37,7 +39,7 @@ const config = (() => {
                     suppressExcessPropertyErrors: true,
                     noFallthroughCasesInSwitch: true,
                     allowUnreachableCode: false,
-                    rootDir: `${CLIENT}typescript/`,
+                    //rootDir: `${CLIENT}typescript/`,
                     declaration: true,
                     alwaysStrict: true,
                     noEmitOnError: false,

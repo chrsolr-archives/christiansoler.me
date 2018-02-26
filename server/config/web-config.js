@@ -15,11 +15,18 @@ const config = (() => {
         sass: `${CLIENT}sass/`,
         css: `${CLIENT}css/`,
         typescript: `${CLIENT}typescript/`,
+        babel: `${CLIENT}babel/`,
         vendors: `${CLIENT}vendors/`,
         js: `${CLIENT}js/`
     };
 
     const gulp = {
+        babel: {
+            order: [
+                `${paths.babel}core/application-core.js`,
+                `${paths.babel}core/application-*.js`,
+            ]
+        },
         typescript: {
             order: [
                 `${CLIENT}typescript/core/application.ts`,

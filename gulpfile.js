@@ -76,4 +76,13 @@ gulp.task('ts-compile', ['tsconfig'], () => {
         .pipe(gulp.dest(`${config.paths.js}`));
 });
 
-gulp.task('default', ['minify-css', 'ts-compile']);
+gulp.task('babel-compile', () => gulp.src(config.gulp.babel.order)
+    .pipe(glp.sourcemaps.init())
+    .pipe(glp.babel())
+    .pipe(glp.concat('application.js'))
+    .pipe(glp.minify(config.gulp.minify.js))
+    .pipe(glp.sourcemaps.write(`.`))
+    .pipe(gulp.dest(`${config.paths.js}`))
+);
+
+gulp.task('default', ['minify-css', 'babel-compile']);

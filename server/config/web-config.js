@@ -31,7 +31,7 @@ const config = (() => {
                     allowJs: false,
                     removeComments: true,
                     noImplicitAny: true,
-                    sourceMap: false,
+                    sourceMap: true,
                     noImplicitReturns: false,
                     suppressImplicitAnyIndexErrors: true,
                     suppressExcessPropertyErrors: true,

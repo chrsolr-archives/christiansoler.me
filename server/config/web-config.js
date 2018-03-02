@@ -14,7 +14,6 @@ const config = (() => {
         client: `${CLIENT}`,
         sass: `${CLIENT}sass/`,
         css: `${CLIENT}css/`,
-        typescript: `${CLIENT}typescript/`,
         babel: `${CLIENT}babel/`,
         vendors: `${CLIENT}vendors/`,
         js: `${CLIENT}js/`
@@ -27,33 +26,6 @@ const config = (() => {
                 `${paths.babel}core/application-*.js`,
                 `${paths.babel}controllers/*.js`,
             ]
-        },
-        typescript: {
-            order: [
-                `${CLIENT}typescript/core/application.ts`,
-                `${CLIENT}typescript/core/application-*.ts`,
-            ],
-            tsConfig: {
-                compilerOptions: {
-                    //module: 'umd',
-                    //moduleResolution: ''
-                    target: 'es5',
-                    allowJs: false,
-                    removeComments: true,
-                    noImplicitAny: true,
-                    sourceMap: true,
-                    noImplicitReturns: false,
-                    suppressImplicitAnyIndexErrors: true,
-                    suppressExcessPropertyErrors: true,
-                    noFallthroughCasesInSwitch: true,
-                    allowUnreachableCode: false,
-                    //rootDir: `${CLIENT}typescript/`,
-                    declaration: true,
-                    alwaysStrict: true,
-                    noEmitOnError: false,
-                    noEmit: false
-                }
-            }
         },
         minify: {
             js: {

@@ -55,27 +55,6 @@ gulp.task('prismjs-css', () => {
         .pipe(gulp.dest(`${config.paths.vendors}prism/`));
 });
 
-gulp.task('tsconfig', () => {
-    var tsConfig = glp.tsconfig(config.gulp.typescript);
-
-    return gulp.src(config.gulp.typescript.order)
-        .pipe(tsConfig())
-        .pipe(gulp.dest('./'));
-});
-
-gulp.task('ts-compile', ['tsconfig'], () => {
-    var ts = glp.typescript;
-    var tsProject = ts.createProject('./tsconfig.json');
-
-    return gulp.src(config.gulp.typescript.order)
-        .pipe(tsProject(ts.reporter.nullReporter())).js
-        .pipe(glp.sourcemaps.init())
-        .pipe(glp.concat('application.js'))
-        .pipe(glp.minify(config.gulp.minify.js))
-        .pipe(glp.sourcemaps.write(`./`))
-        .pipe(gulp.dest(`${config.paths.js}`));
-});
-
 gulp.task('babel-compile', () => gulp.src(config.gulp.babel.order)
     .pipe(glp.sourcemaps.init())
     .pipe(glp.babel())

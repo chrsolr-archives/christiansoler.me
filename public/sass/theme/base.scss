@@ -1,0 +1,11 @@
+@import "./partials/_utils";
+
+html {
+    body {
+        height: 100%;
+        font-family: $font-montserrat;
+        font-weight: $font-weight-regular;
+        color: $color-light-black;
+        background-color: $color-white;
+    }
+}

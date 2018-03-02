@@ -1,12 +1,12 @@
+(() => {
 
-class HomeController {
-    constructor() {
+    function HomeController() {
         const _this = this;
         _this.title = 'christiansoler.me';
         _this.subtitle = 'Under Construction';
     }
-}
 
-HomeController.$inject = [];
+    HomeController.$inject = [];
 
-angular.module(`${window.APP_NAME}.controllers`).controller('HomeController', HomeController);
+    angular.module(`${window.APP_NAME}.controllers`).controller('HomeController', HomeController);
+})();

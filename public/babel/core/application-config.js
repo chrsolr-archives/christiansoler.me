@@ -1,10 +1,5 @@
-(() => {
-
-    angular.module(window.APP_NAME).config(config);
-
-    config.$inject = ['$routeProvider', '$locationProvider'];
-
-    function config($routeProvider, $locationProvider) {
+const Config = (() => {
+    function Config($routeProvider, $locationProvider) {
         $routeProvider.when('/', {
             templateUrl: '/views/home.html',
             caseInsensitiveMatch: true,
@@ -13,7 +8,13 @@
         }).otherwise({
             redirectTo: '/'
         });
-
+        
         $locationProvider.html5Mode(true);
     };
+
+    Config.$inject = ['$routeProvider', '$locationProvider'];
+
+    return Config;
 })();
+    
+angular.module(window.APP_NAME).config(Config);

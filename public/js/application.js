@@ -33,18 +33,17 @@ var Config = function () {
 angular.module(window.APP_NAME).config(Config);
 'use strict';
 
-var HomeController = function () {
-    function HomeController() {
-        var _this = this;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-        _this.title = 'christiansoler.me';
-        _this.subtitle = 'Under Development';
-    };
+var HomeController = function HomeController() {
+    _classCallCheck(this, HomeController);
 
-    HomeController.$inject = [];
+    var _this = this;
+    _this.title = 'christiansoler.me';
+    _this.subtitle = 'Under Construction';
+};
 
-    return HomeController;
-}();
+HomeController.$inject = [];
 
 angular.module(window.APP_NAME + '.controllers').controller('HomeController', HomeController);
 //# sourceMappingURL=application.js.map

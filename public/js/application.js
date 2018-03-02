@@ -14,18 +14,22 @@ window.APP_NAME = 'app';
 'use strict';
 
 (function () {
-    function Config($routeProvider, $locationProvider) {
-        $routeProvider.when('/', {
-            templateUrl: '/views/home.html',
-            caseInsensitiveMatch: true,
-            controller: 'HomeController',
-            controllerAs: 'vm'
-        }).otherwise({
-            redirectTo: '/'
-        });
+    var Config = function () {
+        function Config($routeProvider, $locationProvider) {
+            $routeProvider.when('/', {
+                templateUrl: '/views/home.html',
+                caseInsensitiveMatch: true,
+                controller: 'HomeController',
+                controllerAs: 'vm'
+            }).otherwise({
+                redirectTo: '/'
+            });
 
-        $locationProvider.html5Mode(true);
-    }
+            $locationProvider.html5Mode(true);
+        }
+
+        return Config;
+    }();
 
     Config.$inject = ['$routeProvider', '$locationProvider'];
 
@@ -34,12 +38,15 @@ window.APP_NAME = 'app';
 'use strict';
 
 (function () {
+    var HomeController = function () {
+        function HomeController() {
+            var _this = this;
+            _this.title = 'christiansoler.me';
+            _this.subtitle = 'Under Construction';
+        }
 
-    function HomeController() {
-        var _this = this;
-        _this.title = 'christiansoler.me';
-        _this.subtitle = 'Under Construction';
-    }
+        return HomeController;
+    }();
 
     HomeController.$inject = [];
 

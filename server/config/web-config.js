@@ -25,6 +25,7 @@ const config = (() => {
             order: [
                 `${paths.babel}core/application-core.js`,
                 `${paths.babel}core/application-*.js`,
+                `${paths.babel}controllers/*.js`,
             ]
         },
         typescript: {

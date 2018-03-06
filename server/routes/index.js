@@ -12,6 +12,9 @@ module.exports = (express_app) => {
     // API routes for Tags
     express_app.use('/api', require('./src/tags-routes')());
 
+    // API routes for Tags
+    express_app.use('/api', require('./src/xa-routes')());
+
     // Catchall Route
     express_app.get('*', (req, res) => {
         res.redirect('/');

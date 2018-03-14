@@ -1,6 +1,8 @@
-html body {
-  height: 100%;
-  font-family: "Montserrat", sans-serif;
-  font-weight: 300;
-  color: #313131;
-  background-color: #ffffff; }
+html {
+  height: 100%; }
+  html body {
+    height: 100%;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    color: #313131;
+    background-color: #ffffff; }

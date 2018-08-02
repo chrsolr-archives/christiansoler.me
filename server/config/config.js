@@ -11,7 +11,7 @@ const config = (() => {
         PORT: process.env.PORT || 3000,
         ENV: process.env.NODE_ENV || 'DEV',
         SECRET: process.env.SECRET || 'SECRET',
-        BRAND_TITLE: process.env.BRAND_TITLE || 'KeyPunchers.io-DEV'
+        BRAND_TITLE: process.env.BRAND_TITLE || 'christiansoler.me-DEV'
     };
 
     const apis = {
@@ -70,7 +70,6 @@ const config = (() => {
                     noFallthroughCasesInSwitch: true,
                     allowUnreachableCode: false,
                     rootDir: `${paths.TYPESCRIPT}`,
-                    //outDir: `${paths.JS}`,
                     declaration: true,
                     alwaysStrict: true,
                     noEmitOnError: false,

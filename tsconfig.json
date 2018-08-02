@@ -1,0 +1,25 @@
+{
+    "compilerOptions": {
+        "module": "amd",
+        "target": "es5",
+        "allowJs": false,
+        "removeComments": true,
+        "noImplicitAny": true,
+        "sourceMap": false,
+        "noImplicitReturns": false,
+        "suppressImplicitAnyIndexErrors": true,
+        "suppressExcessPropertyErrors": true,
+        "noFallthroughCasesInSwitch": true,
+        "allowUnreachableCode": false,
+        "rootDir": "./public/typescript/",
+        "declaration": true,
+        "alwaysStrict": true,
+        "noEmitOnError": false,
+        "noEmit": false
+    },
+    "files": ["public/typescript/modules/bootstrapper.ts",
+        "public/typescript/scripts/blog-create.ts",
+        "public/typescript/scripts/blog-edit.ts",
+        "public/typescript/scripts/blog.ts"
+    ]
+}

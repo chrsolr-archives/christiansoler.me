@@ -1,0 +1,45 @@
+extends ../layout.pug
+block content
+    section.blog-container
+        .container
+            .row
+                .col-md-8.col-md-offset-2
+                    img.img-responsive(src=blog.imageUrl)
+                    h1 #{blog.title}
+                    if blog.author
+                        p By #{blog.author}, Published: #{moment(blog.createdAt).format("MM/DD/YYYY")}
+                    else
+                        p Published: #{moment(blog.createdAt).format("MM/DD/YYYY")}
+                    hr
+                    div !{blog.content}
+                    hr
+                    h3.text-center Tags
+                    ul.tags
+                        each tag in blog.tags
+                            li
+                                a.bracket-animation(href='/blogs?tag=' + tag.name) #{tag.name}
+                    hr
+                    h3.text-center #{blog.comments.length} Comments
+                    if(!user)
+                        p.text-center
+                            a.bracket-animation(href='/login') Must be logged in to leave a comment
+                    if blog.comments.length > 0
+                        each comment in blog.comments
+                            .comment-block
+                                .media(style={marginLeft: 0})
+                                    .media-left.hidden-xs
+                                        img.img-circle.img-border-circle.media-object(src=comment.avatar, width="50px", alt="Profile Image")
+                                    .media-body
+                                        h4.media-heading #{comment.author}
+                                        p #{comment.content}
+                                        p.small.pull-right Created At: #{moment(comment.createdAt).format("MM/DD/YYYY")}
+                    if (user)
+                        hr
+                        form(method="post")
+                            .form-group
+                                textarea.form-control.form-control-textarea#blog-preview(placeholder="Leave a comment...", name="comment_post", style="min-height: 150px; resize: none;", data-minlength="3", maxlength="500", required)
+                                input.btn.btn-default.pull-right(type="submit", value="Submit")
+    script.
+        requirejs(['/js/scripts/blog.min.js', 'prism'], function(Blog) {
+            new Blog();
+        });
